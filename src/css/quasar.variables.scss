@@ -1,0 +1,37 @@
+// Quasar SCSS (& Sass) Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass/SCSS variables found in Quasar's source Sass/SCSS files.
+
+// Check documentation for full list of Quasar variables
+
+// Your own variables (that are declared here) and Quasar's own
+// ones will be available out of the box in your .vue/.scss/.sass files
+
+// It's highly recommended to change the default colors
+// to match your app's branding.
+// Tip: Use the "Theme Builder" on Quasar's documentation website.
+
+$primary: hsl(354, 83.3333%, 37.6471%); // default #1976d2
+$secondary: hsl(204, 100%, 43.75%); // default #26a69a
+// $accent: #9c27b0; // default #9c27b0
+
+// $dark: #1d1d1d; // default #1d1d1d
+// $dark-page: #121212; // default #121212
+
+// $positive: #21ba45; // default #21ba45
+// $negative: #c10015; // default #c10015
+// $info: #31ccec; // default #31ccec
+// $warning: #f2c037; // default #f2c037
+
+// custom
+
+// must be equal to
+// 	- the value specified in the d-drawer global component
+// 	- the value specified in the src/router/index.js
+$drawer-breakpoint: 1280px;
+$above-drawer-breakpoint: ($drawer-breakpoint + .2px);
+
+// breakpoints to display header buttons
+$header-breakpoint-1: 375px;
+$header-breakpoint-2: 412px;

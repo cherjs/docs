@@ -1,0 +1,129 @@
+// app global css in SCSS form
+
+html,
+body {
+	font-size: 16px;
+}
+
+html {
+
+	$-header-height: 51px;
+	$-page-padding: 16px;
+	$-offset: (
+		$-header-height
+		+ $-page-padding
+	);
+
+	scroll-behavior: smooth;
+	scroll-padding-top: $-offset;
+
+	@media (min-width: $above-drawer-breakpoint) {
+
+		$-page-padding: 24px;
+		$-offset: (
+			$-header-height
+			+ $-page-padding
+		);
+
+		scroll-padding-top: $-offset;
+	}
+}
+
+.q-markdown {
+
+	$-parent: &;
+
+	&--heading {
+
+		&-h2 {
+			color: $primary;
+		}
+
+		&-h3 {
+			color: $secondary;
+		}
+
+		&-h4,
+		&-h5 {
+			font-weight: bold;
+		}
+
+		&#{&} {
+			padding: 0.5em 0;
+			line-height: normal !important;
+
+			&-h3 {
+				font-size: 1.25rem !important;
+			}
+
+			&-h5 {
+				font-size: 0.875rem !important;
+			}
+		}
+	}
+
+	&--link {
+
+		$-color: $secondary;
+		$-visited-color: $primary;
+
+		color: $-color;
+
+		#{$-parent}--token {
+			border-color: currentColor !important;
+			color: $-color !important;
+		}
+
+		&:visited {
+			color: $-visited-color;
+
+			#{$-parent}--token {
+				color: $-visited-color !important;
+			}
+		}
+
+		#{$-parent}--note & {
+			color: $-color !important;
+
+			&:visited {
+				color: $-visited-color !important;
+			}
+		}
+	}
+
+	&--line-numbers-wrapper,
+	code,
+	pre {
+		font-size: 1rem !important;
+	}
+
+	&--note {
+		border-radius: 8px !important;
+	}
+
+	&--code,
+	pre {
+		margin: 1rem 0 !important;
+	}
+
+	hr {
+		margin: 2rem 0;
+		border: 0;
+		border-top: 1px solid hsl(0, 0%, 87.5%);
+	}
+
+	.body--dark & {
+
+		#{$-parent}--note {
+			border-right: 1px solid $grey-9;
+		}
+	}
+
+	.soon {
+
+		&::before {
+			content: '… (soon)';
+			color: hsl(0, 0%, 75%);
+		}
+	}
+}
